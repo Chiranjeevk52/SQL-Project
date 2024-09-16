@@ -6,7 +6,7 @@
 
 ## OBJECTIVE
 
-This project has been  made using SQL. It helps the owner of  Digital Music Store understand their customers better. 
+The main objective of this project is to help the owner of  Digital Music Store understand their customers better by giving answer to their questions 
 ## Problem Set
 
 1. Who is the senior most employee based on job title?
@@ -92,6 +92,8 @@ FROM customer
 	FROM track )
 
     ORDER BY milliseconds DESC;
+    # Snapshot of Dashboard (Power BI Service)
+### Query snapshot Link : https://drive.google.com/file/d/1lI5cF-c1CNLfr7UuMfdW_n4Wg40pU57D/view?usp=drivesdk
 
 
 
