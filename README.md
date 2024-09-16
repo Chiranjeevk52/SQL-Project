@@ -1,10 +1,8 @@
-# SQL-Project
 
 
 
 # Music Store Analysis
 
-### Dashboard Link : https://app.powerbi.com/links/t65c8knyt2?ctid=a6de9407-2d24-407d-81e6-941b053c301a&pbi_source=linkShare
 
 ## OBJECTIVE
 
@@ -31,47 +29,68 @@ This project made using SQL  helps the owner of  Digital Music Store owner under
 ## Queries
 1. SELECT title, last_name, first_name 
 FROM employee
+
 ORDER BY levels DESC
 
 2.  SELECT COUNT(*) AS c, billing_country 
 FROM invoice
+
 GROUP BY billing_country
+
 ORDER BY c DESC
 
 3.  SELECT total 
 FROM invoice
+
 ORDER BY total DESC
 
 4. SELECT billing_city,SUM(total) AS InvoiceTotal
 FROM invoice
+
 GROUP BY billing_city
+
 ORDER BY InvoiceTotal DESC
 
 5. SELECT DISTINCT email,first_name, last_name
 FROM customer
-JOIN invoice ON customer.customer_id = invoice.customer_id
+
+JOIN invoice ON customer.customer_id = invoice customer_id
+
 JOIN invoice_line ON invoice.invoice_id = invoice_line.invoice_id
+
 WHERE track_id IN(
+
 	SELECT track_id FROM track
+
 	JOIN genre ON track.genre_id = genre.genre_id
+
 	WHERE genre.name LIKE 'Rock'
 )
 ORDER BY email;
 
 6. SELECT DISTINCT email AS Email,first_name AS FirstName, last_name AS LastName, genre.name AS Name
 FROM customer
+
 JOIN invoice ON invoice.customer_id = customer.customer_id
+
 JOIN invoice_line ON invoice_line.invoice_id = invoice.invoice_id
+
 JOIN track ON track.track_id = invoice_line.track_id
+
 JOIN genre ON genre.genre_id = track.genre_id
+
 WHERE genre.name LIKE 'Rock'
+
 ORDER BY email;
 
 7. SELECT name,milliseconds
 FROM track
+
 WHERE milliseconds > (
+
 	SELECT AVG(milliseconds) AS avg_track_length
 	FROM track )
+
 ORDER BY milliseconds DESC;
 
 
