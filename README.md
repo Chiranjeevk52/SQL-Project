@@ -92,7 +92,7 @@ FROM customer
 	FROM track )
 
     ORDER BY milliseconds DESC;
-    # Snapshot of Dashboard (Power BI Service)
+    # Snapshot of SQL server
 ### Query snapshot Link : https://drive.google.com/file/d/1lI5cF-c1CNLfr7UuMfdW_n4Wg40pU57D/view?usp=drivesdk
 
 
